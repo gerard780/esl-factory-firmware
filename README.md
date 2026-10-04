@@ -5,24 +5,46 @@ tags. Each binary preserves the complete captured flash address range.
 
 ## Available captures
 
-| Tag | Capture date | Size | Verification | Download |
+| Tag | Capture date | Native resolution | Size | Download |
 | --- | --- | --- | --- | --- |
-| Hanshow Nebular Pro-154Q-N, C3HW2 | 2026-10-03 | 512 KiB | Two full reads match byte for byte; initial samples and remote/local hashes match | [Factory dump](dumps/hanshow/nebular-pro-154q-n/factory-2026-10-03.bin) |
-| Hanshow Nebular Pro 266, reference specimen | 2026-09-28 | 512 KiB | One full read; initial sample, ten fresh 256-byte reads, and remote/local hashes match | [Factory dump](dumps/hanshow/nebular-pro-266/factory-2026-09-28.bin) |
+| Hanshow Nebular Pro-154Q-N, C3HW2 | 2026-10-03 | 200 × 200 | 512 KiB | [Factory dump](dumps/hanshow/nebular-pro-154q-n/factory-2026-10-03.bin) |
+| Hanshow Nebular Pro-266Q-N, reference specimen | 2026-09-28 | 152 × 296 | 512 KiB | [Factory dump](dumps/hanshow/nebular-pro-266/factory-2026-09-28.bin) |
 
 Both images cover `0x000000` through `0x07ffff` inclusive and were captured
 through SWS. The flash JEDEC ID was `eb6013` for both specimens. No flash
 programming, erase, or unlock commands were issued during either capture.
 
+## Capture verification
+
+- **154Q-N:** two independent 524,288-byte reads match byte for byte. Initial
+  4 KiB samples and remote/local SHA-256 hashes match; no transport faults were
+  recorded.
+- **266Q-N:** one 524,288-byte read, checked against the initial sample and ten
+  fresh 256-byte reads across flash. Remote/local SHA-256 hashes match. On
+  2026-09-29, before installing replacement firmware, a further 79,872-byte
+  partial read and 38 independently read 256-byte samples matched this capture.
+  A second complete factory read was not performed.
+
 ## Provenance
 
 Factory state was reported by the owner. Readback checks establish capture
-consistency; OEM origin has not been independently authenticated. The 266
-reference specimen was identified by matching its printed label identifiers
-to records in the saved flash. Its exact case revision and PCB marking were
-not recorded, so these are left unspecified.
+consistency; OEM origin has not been independently authenticated. Both captures
+have stored identifiers that match the corresponding photographed printed
+barcodes:
 
-The 154Q-N specimen has PCB `HSEL4Q_01_54M_39` and MCU marking `MS9100 B410A`.
+| Capture | Printed barcode | Stored four-byte identifier |
+| --- | --- | --- |
+| 154Q-N | `514583053996242823` | `EE31D387` |
+| 266Q-N reference | `343581053587707526` | `D5D81286` |
+
+The 154Q-N capture records identify case revision `C3HW2`, PCB
+`HSEL4Q_01_54M_39`, MCU marking `MS9100 B410A`, and FCC ID `2BPF3-NP1540`.
+The supplied photos confirm these hardware markings.
+
+The 266Q-N specimen photos document PCB `HSEL7_02_66M_30` and MCU marking
+`MS9100 B410A`. Its case revision is not shown in these photos and remains
+unspecified in the manifest.
+
 Capture details and SHA-256 values are recorded in [manifest.json](manifest.json).
 
 Full-flash snapshots retain original per-device identifiers, calibration,
@@ -32,16 +54,15 @@ configuration, and runtime data. Cross-device restoration has not been validated
 
 Owner-supplied photos, cropped directly from the original JPEGs and saved as
 lossless PNGs. Lettering and circuit details are preserved without retouching.
-These photos document hardware markings; the photographed units have not been
-independently matched to the archived dumps.
+Each specimen's photos are stored in the same folder as its firmware dump.
 
-| Original photo | Cropped reference |
-| --- | --- |
-| Photo 1 | [Pro-154Q-N model and case label](photos/photo-01-154q-n-label.png) |
-| Photo 2 | [Panel flex and rear board](photos/photo-02-panel-flex.png) |
-| Photo 3 | [154 board and battery](photos/photo-03-154-board-battery.png) |
-| Photo 4 | [MCU and programming pads](photos/photo-04-mcu-test-pads.png) |
-| Photo 5 | [HSEL7_02_66M_30 panel board](photos/photo-05-266-panel-board.png) |
+| Photo | Visible markings | Cropped reference |
+| --- | --- | --- |
+| 1 | `Nebular Pro-154Q-N`, `450546`, `C3HW2`, `2BPF3-NP1540`; made in Vietnam | [Model and case label](dumps/hanshow/nebular-pro-154q-n/photo-01-154q-n-label.png) |
+| 2 | Flex `60105-01225`, `1.5HR_V1.0`, `2024-11-13`; pads `NRST`, `GND` | [Panel flex and rear board](dumps/hanshow/nebular-pro-154q-n/photo-02-panel-flex.png) |
+| 3 | PCB `HSEL4Q_01_54M_39`, `24-08`; MCU `MS9100 B410A`; Hanshow `65 mAh`, `3.0 V` battery | [154 board and battery](dumps/hanshow/nebular-pro-154q-n/photo-03-154-board-battery.png) |
+| 4 | MCU `MS9100 B410A`; pads `RST`, `TX`, `RX`, `SWS`, `VCC`, `GND` | [MCU and programming pads](dumps/hanshow/nebular-pro-266/photo-04-mcu-test-pads.png) |
+| 5 | PCB `HSEL7_02_66M_30`; panel signals including `DC`, `CS`, `RST`, `BUSY` | [266 panel board](dumps/hanshow/nebular-pro-266/photo-05-266-panel-board.png) |
 
 ## Verify downloads
 
