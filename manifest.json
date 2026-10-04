@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "image_type": "unaltered full-flash snapshot",
+  "dumps": [
+    {
+      "manufacturer": "Hanshow",
+      "model": "Nebular Pro-154Q-N",
+      "case_revision": "C3HW2",
+      "pcb": "HSEL4Q_01_54M_39",
+      "mcu_marking": "MS9100 B410A",
+      "capture_date": "2026-10-03",
+      "file": "dumps/hanshow/nebular-pro-154q-n/factory-2026-10-03.bin",
+      "sha256": "9cac6e77d337412e99103bd8974a808f4d5782d01180077f6e2af71754fcef84",
+      "size_bytes": 524288,
+      "flash_start": "0x000000",
+      "flash_end_inclusive": "0x07ffff",
+      "flash_jedec_id": "eb6013",
+      "factory_status": "Owner-reported factory firmware; OEM origin not independently authenticated.",
+      "validation": {
+        "full_reads": 2,
+        "repeated_full_reads_match": true,
+        "initial_samples_match": true,
+        "remote_and_local_hashes_match": true,
+        "transport_faults": 0,
+        "capture_flash_program_erase_unlock": false
+      }
+    },
+    {
+      "manufacturer": "Hanshow",
+      "model": "Nebular Pro 266 (reference specimen)",
+      "case_revision": null,
+      "pcb": null,
+      "mcu_marking": null,
+      "capture_date": "2026-09-28",
+      "file": "dumps/hanshow/nebular-pro-266/factory-2026-09-28.bin",
+      "sha256": "b51bc02f5a163198117882d6b71f78d828c9c93b226f9bb49c1b7bb6f20e9f5f",
+      "size_bytes": 524288,
+      "flash_start": "0x000000",
+      "flash_end_inclusive": "0x07ffff",
+      "flash_jedec_id": "eb6013",
+      "factory_status": "Owner-reported untouched device; OEM origin not independently authenticated.",
+      "model_evidence": "Identified as the 266 reference specimen by matching printed label identifiers to the saved flash record. Exact case revision and PCB marking were not recorded for this specimen.",
+      "validation": {
+        "full_reads": 1,
+        "repeated_full_reads_match": null,
+        "initial_samples_match": true,
+        "remote_and_local_hashes_match": true,
+        "fresh_sample_offsets": [
+          "0x000000",
+          "0x010000",
+          "0x020000",
+          "0x030000",
+          "0x040000",
+          "0x050000",
+          "0x060000",
+          "0x070000",
+          "0x079000",
+          "0x07ff00"
+        ],
+        "fresh_sample_size_bytes": 256,
+        "fresh_samples_match": true,
+        "capture_flash_program_erase_unlock": false
+      }
+    }
+  ]
+}
