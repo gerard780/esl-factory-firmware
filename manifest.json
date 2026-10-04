@@ -35,12 +35,14 @@
         "dumps/hanshow/nebular-pro-154q-n/photo-01-154q-n-label.png",
         "dumps/hanshow/nebular-pro-154q-n/photo-02-panel-flex.png",
         "dumps/hanshow/nebular-pro-154q-n/photo-03-154-board-battery.png"
-      ]
+      ],
+      "case_marking": "450546",
+      "made_in": "Vietnam"
     },
     {
       "manufacturer": "Hanshow",
       "model": "Nebular Pro-266Q-N (reference specimen)",
-      "case_revision": null,
+      "case_revision": "E3LW2",
       "pcb": "HSEL7_02_66M_30",
       "mcu_marking": "MS9100 B410A",
       "capture_date": "2026-09-28",
@@ -51,7 +53,7 @@
       "flash_end_inclusive": "0x07ffff",
       "flash_jedec_id": "eb6013",
       "factory_status": "Owner-reported untouched device; OEM origin not independently authenticated.",
-      "model_evidence": "Model documented in the stock-dump analysis; stored identifiers match the corresponding photographed printed label. Owner-supplied specimen photos document PCB HSEL7_02_66M_30 and MCU marking MS9100 B410A. Case revision is not shown in the supplied specimen photos.",
+      "model_evidence": "Model documented in the stock-dump analysis; stored identifiers match the corresponding photographed printed label. Owner-supplied specimen photos document Nebular Pro-266Q-N, case marking 404545, revision E3LW2, FCC ID 2BPF3-NP2660, PCB HSEL7_02_66M_30, and MCU marking MS9100 B410A.",
       "validation": {
         "full_reads": 1,
         "repeated_full_reads_match": null,
@@ -91,8 +93,12 @@
       "factory_id_hex": "D5D81286",
       "photos": [
         "dumps/hanshow/nebular-pro-266/photo-04-mcu-test-pads.png",
-        "dumps/hanshow/nebular-pro-266/photo-05-266-panel-board.png"
-      ]
+        "dumps/hanshow/nebular-pro-266/photo-05-266-panel-board.png",
+        "dumps/hanshow/nebular-pro-266/photo-06-266q-n-label.png"
+      ],
+      "case_marking": "404545",
+      "fcc_id": "2BPF3-NP2660",
+      "made_in": "Vietnam"
     }
   ]
 }
