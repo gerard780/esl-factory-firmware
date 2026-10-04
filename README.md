@@ -28,6 +28,21 @@ Capture details and SHA-256 values are recorded in [manifest.json](manifest.json
 Full-flash snapshots retain original per-device identifiers, calibration,
 configuration, and runtime data. Cross-device restoration has not been validated.
 
+## Hardware reference photos
+
+Owner-supplied photos, cropped directly from the original JPEGs and saved as
+lossless PNGs. Lettering and circuit details are preserved without retouching.
+These photos document hardware markings; the photographed units have not been
+independently matched to the archived dumps.
+
+| Original photo | Cropped reference |
+| --- | --- |
+| Photo 1 | [Pro-154Q-N model and case label](photos/photo-01-154q-n-label.png) |
+| Photo 2 | [Panel flex and rear board](photos/photo-02-panel-flex.png) |
+| Photo 3 | [154 board and battery](photos/photo-03-154-board-battery.png) |
+| Photo 4 | [MCU and programming pads](photos/photo-04-mcu-test-pads.png) |
+| Photo 5 | [HSEL7_02_66M_30 panel board](photos/photo-05-266-panel-board.png) |
+
 ## Verify downloads
 
 Run from the repository root:
